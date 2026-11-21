@@ -30,6 +30,7 @@ import top.outlands.mod_of_mending.transformer.ic2ce.Ic2cExtrasLoadingPluginTran
 import top.outlands.mod_of_mending.transformer.integrated_proxy.MixinLoaderTransformer;
 import top.outlands.mod_of_mending.transformer.invtweaks.InvTweaksHandlerShortcutsTransformer;
 import top.outlands.mod_of_mending.transformer.journeymap.FileHandlerTransformer;
+import top.outlands.mod_of_mending.transformer.journeymap.TextureCacheTransformer;
 import top.outlands.mod_of_mending.transformer.journeymap.ThemeLoaderTransformer;
 import top.outlands.mod_of_mending.transformer.journeymap.VersionCheck$1Transformer;
 import top.outlands.mod_of_mending.transformer.kubejs.KubeJSTransformer;
@@ -282,6 +283,8 @@ public class TransformerHelper {
                     new FileHandlerTransformer(), "journeymap.client.io.FileHandler");
             TransformerDelegate.registerExplicitTransformer(
                     new VersionCheck$1Transformer(), "journeymap.common.version.VersionCheck$1");
+            TransformerDelegate.registerExplicitTransformer(
+                    new TextureCacheTransformer(), "journeymap.client.texture.TextureCache");
         }
         if (ModOfMendingConfig.modPatchConfig.enableOfflineSkins) {
             TransformerDelegate.registerExplicitTransformer(
